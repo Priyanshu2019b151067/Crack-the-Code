@@ -1,0 +1,13 @@
+int Solution::searchMatrix(vector<vector<int> > &A, int B) {
+    int row = 0,col = A[0].size()-1;
+    while(row < A.size() && col >=0){
+        if(A[row][col] > B){
+            col--;
+        }else if(A[row][col] < B){
+            row++;
+        }else{
+            return 1;
+        }
+    }
+    return 0;
+}
